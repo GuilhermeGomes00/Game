@@ -38,7 +38,7 @@ namespace Game
             Console.WriteLine("O dano foi " + DanoCausado);
 
 
-                Console.ReadKey();
+            Console.ReadKey();
 
         }
     }

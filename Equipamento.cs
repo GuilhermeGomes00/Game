@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    internal class Equipamento
+    internal class Equipamento() : Chara(3, 1, 2)
     {
         public int Armor { get; set; }
         public string WeaponName { get; set; }

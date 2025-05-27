@@ -10,32 +10,15 @@ namespace Game
     
     internal class Program
     {
-        
+                    //Equipamento Espada_curta = new Equipamento("ShortSword", 1, 6);
+            //Player p = new Player("J", 3, 2, 1, 0, true, Espada_curta);
+            //personagem teste = new personagem("teste", 1, 1, 1, 10);
+           
+
+            //int dano = p.Attack(teste);  
         static void Main(string[] args)
         {
-            string EscolhaArma;
-            
-            Chara person = new Chara(3, 1, 2);
-            
 
-            Console.WriteLine("Vc pega a espadona ou espadinha?");
-            EscolhaArma = Console.ReadLine().ToLower();
-            int DanoCausado = 0;
-
-            if (EscolhaArma == "espadona")
-            {
-                Console.WriteLine("Brabo, vc escolheu a " + EscolhaArma);
-                EscolhaArma = "teste";
-                DanoCausado = person.Ataque(EscolhaArma, true);
-            } else if (EscolhaArma == "espadinha")
-            {
-                Console.WriteLine("Brabo, vc escolheu a " + EscolhaArma);
-                EscolhaArma = "teste2";
-                DanoCausado = person.Ataque(EscolhaArma, true);
-            }
-            
-
-            Console.WriteLine("O dano foi " + DanoCausado);
 
 
             Console.ReadKey();

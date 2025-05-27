@@ -46,6 +46,8 @@
     <Compile Include="Chara.cs" />
     <Compile Include="Equipamento.cs" />
     <Compile Include="Mob.cs" />
+    <Compile Include="personagem.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -24,7 +24,7 @@ namespace ConsoleApp2
         public int AC { get; set; }
         public int HP { get; set;}
         public bool WithShield { get; set; }
-        public bool Live { get; set; }
+        
 
         // -----------------------------------------------------------
         
@@ -38,44 +38,19 @@ namespace ConsoleApp2
             return Dice.rng.Next(1, 7) + HPfixo;
         }
 
-        public void ReceberDano(int dano)
+        public int ReceberDano(int dano)
         {
-            this.HP -= dano;
-            if (HP <= 0)
-            {
-                Console.WriteLine($"{Nome} foi derrotado!");
-            }
-            else
-            {
-                Console.WriteLine($"{Nome} ainda está de pé ");
-            }
+            return this.HP -= dano;
         }
 
-        public bool IsLivePlayer(int DanoRecebidoPlayer)
+        public bool IsLive()
         {
-
-            HP -= DanoRecebidoPlayer;
-            if (HP > 0)
-            {
-                Console.WriteLine("Você permanece de pé. " + HP + " HP restante...");
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("Acaba aqui... ");
-                return false;
-            }
+            if (this.HP >= 1) { Console.WriteLine(this.Nome + " permance de pé"); return true; }
+            else { Console.WriteLine(this.Nome + "Não resiste"); return false; }
         }
 
-        /* public bool IsLiveMob(int DanoRecebidoMob) 
-        {
-            hp do monstro = GerarMobHP();
-            hp do monstro -= DanoRecebidoMob;
-            if (hp do monstro >= 1) { Console.WriteLine("Ele resiste"); return true; }
-            else if (hp do monstro <= 0} { Console.WriteLine("O monstro morreu"); return false;}
+        
 
-        }
-         */
         public personagem(string NAME, int str, int dex, int con, int ac)
         {
             Nome = NAME;

@@ -23,9 +23,7 @@ namespace ConsoleApp2
             this.arma = arma;
 
 
-            //Equipamento espada = new Equipamento("Espada Curta", 1, 6);
-            //Player heroi = new Player("Fulano", 3, 2, 1, 14, espada); ----> Forma pra causar dano
-            // heroi.Arma.RolarDano(heroi.STR)
+
         }
 
         public int Attack(personagem alvo)

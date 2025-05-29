@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,7 +36,7 @@ namespace ConsoleApp2
 
         internal int GerarMobHP(int HPfixo)
         {
-            return Dice.rng.Next(1, 7) + HPfixo;
+            return Dice.rng.Next(1, 7) + HPfixo + 9;
         }
 
         public int ReceberDano(int dano)
@@ -60,6 +61,8 @@ namespace ConsoleApp2
             AC = ac;
             HP = GerarPlayerHP();
         }
+
+        
 
     }
 }

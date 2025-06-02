@@ -10,6 +10,7 @@ namespace ConsoleApp2
     class Player : personagem
     {
         public Equipamento arma {  get; set; }
+        public int QuantidadePocoes { get; set; } = 3;
 
 
         public int WieldShield(bool Shield)
@@ -26,9 +27,25 @@ namespace ConsoleApp2
 
         }
 
+        public void UsarPocaoDeCura()
+        {
+            if (QuantidadePocoes > 0)
+            {
+                int cura = Dice.rng.Next(2, 8) + 2;
+                HP += cura;
+                if (HP > HP_MAX) HP = HP_MAX;
+                QuantidadePocoes--;
+            }
+            else
+            {
+                Console.WriteLine("Você não tem mais poções.");
+            }
+        }
+
+
         public int Attack(personagem alvo)
         {
-            int RolagemAtaque = Dice.rng.Next(1, 21) + this.STR + 2;
+            int RolagemAtaque = Dice.rng.Next(1, 21) + this.STR + 2 + arma.WeaponAttackBonus;
             Console.WriteLine($"{this.Nome} deu um ataque de {RolagemAtaque}");
 
             if (RolagemAtaque >= alvo.AC)
@@ -37,14 +54,17 @@ namespace ConsoleApp2
                 alvo.ReceberDano(dano);
                 Console.WriteLine($"{dano} de dano causado. ");
                 return dano;
-            } else {
-                Console.WriteLine("Errou o ataque.");
-                return 0;   
             }
-
+            else
+            {
+                Console.WriteLine("Errou o ataque.");
+                return 0;
+            }
         }
 
-        
+
+
+
 
 
     }

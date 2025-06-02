@@ -24,6 +24,10 @@ namespace ConsoleApp2
         public int CON{ get; set; }
         public int AC { get; set; }
         public int HP { get; set;}
+        private int _hpMax;
+        public int HP_MAX => _hpMax;
+
+
         public bool WithShield { get; set; }
         
 
@@ -31,7 +35,7 @@ namespace ConsoleApp2
         
         internal int GerarPlayerHP()
         {
-            return Dice.rng.Next(2, 21) + CON + 10;
+            return Dice.rng.Next(5, 21) + CON + 10;
         }
 
         internal int GerarMobHP(int HPfixo)
@@ -46,8 +50,7 @@ namespace ConsoleApp2
 
         public bool IsLive()
         {
-            if (this.HP >= 1) { Console.WriteLine(this.Nome + " permance de pé"); return true; }
-            else { Console.WriteLine(this.Nome + "Não resiste"); return false; }
+            if (this.HP >= 1) return true; else  return false; 
         }
 
         
@@ -60,9 +63,10 @@ namespace ConsoleApp2
             CON = con;
             AC = ac;
             HP = GerarPlayerHP();
+            _hpMax = HP;
         }
 
-        
+
 
     }
 }
